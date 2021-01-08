@@ -24,7 +24,7 @@ const config = {
     aktif: '24 JAM',
     youtube: 'https://youtube.com/channel/UC6_yRe39uUI7jRXa6oQbzcw',
     whatsapp: 'https://chat.whatsapp.com/Drc2P0gwsYDLmkM38U5d9L',
-    tanggal: `TANGGAL: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
+    tanggal: `Data: ${moment().format('DD')} ${bulan} ${moment().format('YYYY')}`,
     waktu: time
 }
 
@@ -168,7 +168,7 @@ client.on('message-new', async (m) => {
        case 'nulis':
            nulis(value)
                .then(data => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, data, MessageType.image)
                })
                .catch(err => {
@@ -182,8 +182,8 @@ client.on('message-new', async (m) => {
            ytdl('mp3', value)
                .then(data => {
                    const { judul, size, hasil: link } = data
-                   let hasil = `OLA AQUI ESTA O LINK DE DOWNLOAD DA MSC\nCLIQUE NO LINK ABAIXO:\nMUSICA: ${judul}\n\nTamanho Do audio: ${size}\n\nLink: ${link}`
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   let hasil = `Olá, aqui está a sua música.\nApenas clique no link abaixo:\nMUSICA: ${judul}\n\nTamanho Do audio: ${size}\n\nLink: ${link}`
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, hasil, MessageType.text)
                })
                .catch(err => {
@@ -194,8 +194,8 @@ client.on('message-new', async (m) => {
            ytdl('mp4', value)
                .then(data => {
                    const { judul, size, hasil: link } = data
-                   let hasil = `OLA AQUI ESTA O LINK DE DOWNLOAD DA MSC\nCLIQUE NO LINK ABAIXO:\nMUSICA: ${judul}\n\nTamanho Do audio: ${size}\n\nLink: ${link}`
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   let hasil = `Olá, aqui está a sua música.\nApenas clique no link abaixo:\nMUSICA: ${judul}\n\nTamanho Do audio: ${size}\n\nLink: ${link}`
+                   client.sendMessage(id, 'Processandk...', MessageType.text)
                    client.sendMessage(id, hasil, MessageType.text)
                })
                .catch(err => {
@@ -206,8 +206,8 @@ client.on('message-new', async (m) => {
            tweetdl(value)
                .then(data => {
                     const { size, hasil: link } = data
-                    let hasil = `✄1�71ￄ1�77 Berhasil! silahkan klik link di bawah untuk mendownload hasilnya!\nKlik link dibawah🗡️\n\nSize: ${size}\n\nLink: ${link}`
-                    client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                    let hasil = `Funcionou! clique no link abaixo para baixar o resultado! \ nClique no link abaixo:️\n\nSize: ${size}\n\nLink: ${link}`
+                    client.sendMessage(id, 'Processando...', MessageType.text)
                     client.sendMessage(id, hasil ,MessageType.text)
                })
                .catch(err => {
@@ -218,7 +218,7 @@ client.on('message-new', async (m) => {
            tiktokdl(value)
                .then(data => {
                     const { url, nama, durasi, deskripsi } = data
-                    let hasil = `✄1�71 ￄ 1/77 Sucesso !!! Clique no link abaixo para baixar os resultados! \nClique no link abaixo🗡️\n\nTítulo: ${deskripsi} \n\nDurasi: ${durasi}\n\nNome: ${nama}\n\nUrl: ${url}`;
+                    let hasil = `Sucesso !!! Clique no link abaixo para baixar os resultados! \nClique no link abaixo🗡️\n\nTítulo: ${deskripsi} \n\nDurasi: ${durasi}\n\nNome: ${nama}\n\nUrl: ${url}`;
                     client.sendMessage(id, hasil, MessageType.text)
                })
                .catch(err => {
@@ -324,7 +324,7 @@ client.on('message-new', async (m) => {
                case 'cewek':
                    cewePict()
                        .then(buffer => {
-                           client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                           client.sendMessage(id, 'Processando...', MessageType.text)
                            client.sendMessage(id, buffer, MessageType.image)
                        })
                        .catch(err => {
@@ -334,7 +334,7 @@ client.on('message-new', async (m) => {
                case 'cowok':
                    cowoPict()
                        .then(buffer => {
-                           client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                           client.sendMessage(id, 'Processando...', MessageType.text)
                            client.sendMessage(id, buffer, MessageType.image)
                        })
                        .catch(err => {
@@ -349,7 +349,7 @@ client.on('message-new', async (m) => {
        case 'animepict':
            animPict()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -409,8 +409,8 @@ client.on('message-new', async (m) => {
            igStalk(value)
                .then(data => {
                    const { Username, Jumlah_Followers, Jumlah_Following, Name, Jumlah_Post } = data
-                   client.sendMessage(id, '[WAIT] Stalking...⏄1�71ￄ1�77', MessageType.text)
-                   let hasil = `✨Bio do Instagram _${value}_ \n\n 🧶 *Nome do usuário* : ${Username}_ \n 🌀 *Nome* : _${Name}_ \n 🌟 *Número de Seguidores* : _${Jumlah_Followers}_ \n 🌠 *Total_Following* : _${Jumlah_Following}_ \n ⭄1�71ￄ1�77 *Jumlah_Post* : _${Jumlah_Post}_ `
+                   client.sendMessage(id, 'Aguarde, stalkeando...', MessageType.text)
+                   let hasil = `✨Bio do Instagram _${value}_ \n\n 🧶 *Nome do usuário* : ${Username}_ \n 🌀 *Nome* : _${Name}_ \n 🌟 *Número de Seguidores* : _${Jumlah_Followers}_ \n 🌠 *Seguindo* : _${Jumlah_Following}_ \n`
                    client.sendMessage(id, hasil, MessageType.text)
                })
                .catch(err => {
@@ -641,7 +641,7 @@ case 'filmanime':
            bitly(value)
                .then(data => {
                    const { result } = data
-                   let hasil = `Aqui maninha ja terminou☣️ :) \n\n${result} `
+                   let hasil = `Aqui man ja terminou☣️ :) \n\n${result} `
                    client.sendMessage(id, hasil, MessageType.text)
                })
                .catch(err => {
@@ -673,7 +673,7 @@ case 'filmanime':
            case 'map':
            map()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -683,7 +683,7 @@ case 'filmanime':
            case 'waifu':
            waifu()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -693,7 +693,7 @@ case 'filmanime':
       case 'loli':
            loli()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -703,7 +703,7 @@ case 'filmanime':
            case 'ssweb':
            ssweb()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -713,7 +713,7 @@ case 'filmanime':
      case 'cooltext':
            cooltext()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -723,7 +723,7 @@ case 'filmanime':
            case 'ttp':
            ttp()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -733,7 +733,7 @@ case 'filmanime':
            case 'nekonime':
            nekonime()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -743,7 +743,7 @@ case 'filmanime':
            case 'ytmp3':
            mp3()
                .then(buffer => {
-                   client.sendMessage(id, '[ESPERE UM POUCO...', MessageType.text)
+                   client.sendMessage(id, 'Processando...', MessageType.text)
                    client.sendMessage(id, buffer, MessageType.image)
                })
                .catch(err => {
@@ -787,7 +787,7 @@ case 'filmanime':
             if (isMedia) {
                 if (mimetype === 'video/mp4' && message.duration < 10 || mimetype === 'image/gif' && message.duration < 10) {
                     const mediaData = await decryptMedia(message, uaOverride)
-                    client.reply(from, '[WAIT] Sedang di proses⏄1�71ￄ1�77 silahkan tunggu ± 1 min!', id)
+                    client.reply(from, '[PROCESSANDO] Em andamento, aguarde ± 1 min!', id)
                     const filename = `./media/aswu.${mimetype.split('/')[1]}`
                     await fs.writeFileSync(filename, mediaData)
                     await exec(`gify ${filename} ./media/output.gif --fps=30 --scale=240:240`, async function (error, stdout, stderr) {
@@ -795,7 +795,7 @@ case 'filmanime':
                         await client.sendImageAsSticker(from, `data:image/gif;base64,${gif.toString('base64')}`)
                     })
                 } else (
-                    client.reply(from, '[❗] Kirim video dengan caption *!stickerGif* max 10 sec!', id)
+                    client.reply(from, '[❗] Envie um vídeo com uma legenda *!stickerGif* máximo de 10 segundos!', id)
                 )
             }
             break     
